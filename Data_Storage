@@ -1,0 +1,14 @@
+Storage options:
+    1) Volumes
+          Docker volumes store the data directly into the host's filesystem
+          They are the best way to persist data
+          Docker stores volumes in /var/lib/docker/volumes
+          You can share a volume with multiple containers
+    2) Bind mounts
+          allow you to mount an existing host directory as a filesystem on the container
+          That enables you to share important files with the Docker container
+          Bind mounts also allow multiple processes to modify data along with Docker
+          if you are sharing your container data with another application that is not running in Docker 
+    3) tmpfs mounts
+          mounts store data in memory.
+          They do not store any data on disk
