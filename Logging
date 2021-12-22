@@ -1,0 +1,29 @@
+Configuring logging steps:
+    1) docker info | grep "Logging Driver"
+    2) vim /etc/docker/daemon.json
+    3) {
+          "log-driver": "<driver>"
+        }
+    4) sudo systemctl restart docker
+    
+    
+Following logging drivers are available:
+• none: There are no logs available for the container, and therefore they are not stored
+anywhere.
+• local: Logs are stored locally in a custom format and therefore minimizes
+overhead.
+• json-file: The log files are stored in a JSON format, and this is the default
+Docker logging driver.
+• syslog: Uses syslog for storing the Docker logs as well. This option makes sense
+when you use syslog as your default logging mechanism.
+• journald: Uses journald to store Docker logs. You can use the journald
+command line to browse the container logs and the Docker daemon logs.
+• gelf: Sends logs to a Graylog Extended Log Format (GELF) endpoint such as
+Graylog or Logstash.
+• fluentd: Sends logs to Fluentd.
+• awslogs: Sends logs to AWS CloudWatch.
+• splunk: Sends logs to Splunk using the HTTP Event Collector.
+• etwlogs: Sends logs to Event Tracing for Windows (ETW) events. You can use it
+only on Windows platforms.
+• gcplogs: Sends logs to Google Cloud Logging.
+• logentries: Sends logs to Rapid7 Logentries.
