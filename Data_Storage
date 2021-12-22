@@ -12,3 +12,15 @@ Storage options:
     3) tmpfs mounts
           mounts store data in memory.
           They do not store any data on disk
+          
+  Docker storage drivers
+        overlay2 is the default and the recommended storage driver in most operating systems except RHEL 7 and CentOS 7 and older
+        devicemapper is block-based storage and performs the best when subject to more writes than reads.
+        
+  Configuring a storage driver
+   1) docker info|grep 'Storage Driver'
+   2) vim /etc/docker/daemon.json
+   3)  {
+          "storage-driver": "devicemapper"
+       }
+   4) sudo systemctl restart docker
