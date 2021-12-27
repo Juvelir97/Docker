@@ -27,3 +27,8 @@ Graylog or Logstash.
 only on Windows platforms.
 • gcplogs: Sends logs to Google Cloud Logging.
 • logentries: Sends logs to Rapid7 Logentries.
+
+
+Json file logging example
+        docker run --name nginx-json-file --log-driver json-file -d nginx
+        Log file location /var/lib/docker/containers/<container_id>/<container_id>-json.log.
