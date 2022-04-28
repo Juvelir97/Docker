@@ -1,0 +1,10 @@
+FROM ubuntu:latest
+RUN apt-get update && apt install curl -y
+WORKDIR /app
+COPY . .
+EXPOSE 8080
+ENV <Environment variable>
+CMD ["node", "src/index.js"]
+
+
+# To build image run: docker build -t <imagename> .
